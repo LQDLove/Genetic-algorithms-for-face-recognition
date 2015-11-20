@@ -5,6 +5,5 @@ Use of genetic algorithms for face recognition using fitness ellipses. The file 
 ## Requirements
 You need Python 2.7 and the following libraries: PIL, CV.
 - Python 2.7
-### Libraries
 - PIL
 - CV
