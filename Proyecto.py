@@ -56,38 +56,6 @@ def crossover(papa, mama): ## PMX
     
     return (p,m)
 
-## Funcion de procesamiento de imagen previo a inicio de algoritmo genetico
-def procesamiento_imagen():    
-	## Convertir a grayscale
-	img = Image.open(rostro).convert('LA')
-	img.save('greyscale.png')
-
-	## Resize
-
-	foo = Image.open("greyscale.png")
-	foo = foo.resize((256,256),Image.ANTIALIAS)
-	foo.save("greyscale.png",optimize=True,quality=95)	
-
-
-	##  Eliminar ruido
-	img = cv2.imread('greyscale.png')
-	dst = cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
-
-	## Canny detector
-	img = cv2.imread('greyscale.png',0)
-	edges = cv2.Canny(img,256,256)
-
-	plt.subplot(121),plt.imshow(img,cmap = 'gray')
-	plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-	plt.subplot(122),plt.imshow(edges,cmap = 'gray')
-	plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
-
-	plt.show()
-
-
-
-	return edges
-
 ## Mutacion de un cromosoma
 def mutacion(cromosoma):
     index = randint(0, len(cromosoma) - 1)
@@ -182,34 +150,6 @@ def mutaciones(poblacion):
 			poblacion[i] = mutacion(poblacion[i])
 
 	return poblacion
-
-## Se dibuja rectangulo en base al centro (x,y) y ejes mayores y menores. Dibuja rostro detectado
-
-def dibujar_cuadrado(x,y, a,b):
-
-	foo = Image.open(rostro)
-	foo = foo.resize((256,256),Image.ANTIALIAS)
-	foo.save(rostro,optimize=True,quality=95)
-
-
-	im = cv2.imread(rostro)
-	hsv_img = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
-	COLOR_MIN = np.array([20, 80, 80],np.uint8)
-	COLOR_MAX = np.array([40, 255, 255],np.uint8)
-	frame_threshed = cv2.inRange(hsv_img, COLOR_MIN, COLOR_MAX)
-	imgray = frame_threshed
-	ret,thresh = cv2.threshold(frame_threshed,127,255,0)
-	contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-
-	# Find the index of the largest contour
-	areas = [cv2.contourArea(c) for c in contours]
-	max_index = np.argmax(areas)
-	cnt=contours[max_index]
-	
-	cv2.rectangle(im,(x,y),(x+a,y+b),(0,255,0),2)
-	cv2.imshow("Show",im)
-	cv2.waitKey()
-	cv2.destroyAllWindows()
 
 ## Funcion principal donde se realiza el algoritmo completo 
 def simular():
