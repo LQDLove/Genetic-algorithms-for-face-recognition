@@ -10,7 +10,7 @@ You need the following requirements in order to run the project:
 
 ## Algorithm
 
-Previous start of genetic algorithms, the following Image Treatment was applied:
+Previous start of genetic algorithms, the following image processing was applied:
 * Convert RGB Image to grayscale
 * Change the image size to 256x256 
 * Image noise reduction
