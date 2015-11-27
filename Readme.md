@@ -12,4 +12,4 @@ You need the following requirements in order to run the project:
 
 With 15 generations and 100 elements in the poblation, we get the following result:
 
-![alt tag](https://github.com/cgcastro/Genetic-algorithms-for-face-recognition/blob/master/face.png)
+![alt tag](https://github.com/cgcastro/Genetic-algorithms-for-face-recognition/blob/master/face.PNG)
