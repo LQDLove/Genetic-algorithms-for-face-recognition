@@ -87,8 +87,6 @@ def procesamiento_imagen():
 
 	plt.show()
 
-
-
 	return edges
 
 ## Mutacion de un cromosoma
@@ -166,6 +164,8 @@ def cruces(poblacion, valores):
 
 	tam_pob = len(nueva_pob)	
 
+	## Realiza cruces en la población
+
 	for i in range(tam_pob):
 		opcion_cruce = random.random()
 		if opcion_cruce < probabilidad_cruce:
@@ -194,7 +194,7 @@ def dibujar_cuadrado(x,y, a,b):
 	foo = foo.resize((256,256),Image.ANTIALIAS)
 	foo.save(rostro,optimize=True,quality=95)
 
-
+	## Crea un nuevo rectángulo 
 	im = cv2.imread(rostro)
 	hsv_img = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
 	COLOR_MIN = np.array([20, 80, 80],np.uint8)
@@ -227,6 +227,8 @@ def simular():
 	poblacion = poblar(20, poblacion)
 
 	
+	## Realiza conjunto de generaciones
+
 	for generacion in range(generaciones):
 		for individuo in poblacion:
 			iteracion += 1
@@ -243,15 +245,19 @@ def simular():
 		iteracion = 0
 
 
+    ## Evalúa el resultado que obtuvo mejor fitness
+
 	maxCromosomas = []
 	for cromosoma in maximos:
 		
 		maxCromosomas.append(fitness(cromosoma, pixeles))
 
-
 	ind_crom = maxCromosomas.index(max(maxCromosomas))
 
 	(x,y,rx,ry,theta) = decodificar(maximos[ind_crom])
+
+
+	## Dibuja cuadrado resultante 
 
 	dibujar_cuadrado(int(x,2), int(y,2), int(rx,2), int(ry,2))
 
