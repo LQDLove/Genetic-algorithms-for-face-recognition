@@ -87,6 +87,11 @@ def procesamiento_imagen():
 
 	plt.show()
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 4b11544... update
 	return edges
 
 ## Mutacion de un cromosoma
@@ -194,7 +199,11 @@ def dibujar_cuadrado(x,y, a,b):
 	foo = foo.resize((256,256),Image.ANTIALIAS)
 	foo.save(rostro,optimize=True,quality=95)
 
+<<<<<<< HEAD
 	## Crea un nuevo rectángulo 
+=======
+
+>>>>>>> parent of 4b11544... update
 	im = cv2.imread(rostro)
 	hsv_img = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
 	COLOR_MIN = np.array([20, 80, 80],np.uint8)
