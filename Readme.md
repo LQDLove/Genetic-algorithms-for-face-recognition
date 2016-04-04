@@ -3,10 +3,10 @@
 Genetic algorithms for face recognition adjusting faces with ellipses. 
 
 ## Requirements
-You need the following in order to run the project:
+You need the following requirements in order to run the project:
 - Python 2.7
-- PIL library
-- CV libray
+- PIL
+- CV
 
 ## Algorithm
 
