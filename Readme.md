@@ -20,11 +20,11 @@ Previous start of genetic algorithms, the following Image Treatment was applied:
 * Image noise reduction
 * Apply Canny algorithm 
 
-Then the genetic algorithm was applied adjusting faces with ellipses. (More details at Reporte.pdf)
+Then the genetic algorithm was applied adjusting faces with ellipses. (Details at Reporte.pdf)
 
 
 ## Sample output
 
-With 15 generations and 100 individuals, I got the following result:
+With 15 generations and 100 individuals, we get the following result:
 
 ![alt tag](https://github.com/cgcastro/Genetic-algorithms-for-face-recognition/blob/master/face.PNG)
