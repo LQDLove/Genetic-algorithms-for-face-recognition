@@ -11,7 +11,11 @@ You need the following in order to run the project:
 ## Algorithm
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Before to start the GA,  we applied the following steps:
+=======
+Previous start of genetic algorithms, the following Image Treatment was applied:
+>>>>>>> parent of 43923f5... changes readme
 =======
 Previous start of genetic algorithms, the following Image Treatment was applied:
 >>>>>>> parent of 43923f5... changes readme
